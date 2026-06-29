@@ -9,7 +9,8 @@ pl = st.slider("Petal length", 1.0, 7.0, 1.4)
 pw = st.slider("Petal width", 0.1, 2.5, 0.2)
 
 if st.button("Predict"):
-    res = requests.post("https://lecture-11-1.onrender.com/predict",
+    res = requests.post("https://oceanblue.app.n8n.cloud/webhook/retention",
     json={"sepal_length": sl, "sepal_width": sw,
         "petal_length": pl, "petal_width": pw})
-    st.success(f"Prediction: {res.json()['prediction']}")
+    # st.success(f"Prediction: {res.json()['prediction']}")
+    st.write(res.json())
